@@ -18,3 +18,7 @@ package 'install apache' do
   package_name 'apache2'
   action :install
 end
+
+service 'apache2' do
+  action [ :enable, :start ]
+end

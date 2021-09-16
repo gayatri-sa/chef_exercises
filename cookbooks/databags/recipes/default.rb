@@ -8,6 +8,7 @@ common_databag = data_bag('common')
 common_company_info_item = data_bag_item('common', 'company_info')
 mysql_password = Chef::EncryptedDataBagItem.load('passwords', 'mysql')
 
+# https://www.geeksforgeeks.org/ruby-hash-flatten-function/
 log '============ Items in the common databag' do
   level :warn
   message "#{common_databag.flatten()}"

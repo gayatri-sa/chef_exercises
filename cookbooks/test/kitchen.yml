@@ -1,34 +1,39 @@
 ---
 driver:
-  name: vagrant
-
-## The forwarded_port port feature lets you connect to ports on the VM guest via
-## localhost on the host.
-## see also: https://www.vagrantup.com/docs/networking/forwarded_ports
-
-#  network:
-#    - ["forwarded_port", {guest: 80, host: 8080}]
+  name: dokken
+  privileged: true # so that we can check the service statuses
 
 provisioner:
-  name: chef_zero
+  name: dokken
 
-  ## product_name and product_version specifies a specific Chef product and version to install.
-  ## see the Chef documentation for more details: https://docs.chef.io/workstation/config_yml_kitchen/
-  #  product_name: chef
-  #  product_version: 17
+transport:
+  name: dokken
 
 verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-32
+  - name: ubuntu-20.04
     driver:
-      box: hashicorp/precise32
-  # - name: centos-8
+      image: dokken/ubuntu-20.04
+# doing the below so that we can verify status of different services inside a docker container
+# by default docker doesn't have a service manager (like systemctl or service) that can be used to check the status of none PID 1 services
+# https://github.com/chef-boneyard/chef-client/blob/main/kitchen.dokken.yml
+# https://github.com/test-kitchen/kitchen-dokken#process-orientation
+      pid_one_command: /bin/systemd
+      intermediate_instructions:
+        - RUN /usr/bin/apt-get update
 
 suites:
   - name: default
     verifier:
       inspec_tests:
         - test/integration/default
-    attributes:
+  - name: server
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    provisioner:
+      policyfile_path: ../../policyfiles/company_web.rb
+    excludes:
+      - ubuntu-20.04
