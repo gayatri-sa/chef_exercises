@@ -1,0 +1,132 @@
+I, [2021-09-15T10:29:35.556358 #6812]  INFO -- default-ubuntu-32: -----> Creating <default-ubuntu-32>...
+I, [2021-09-15T10:29:39.531419 #6812]  INFO -- default-ubuntu-32: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2021-09-15T10:29:41.901705 #6812]  INFO -- default-ubuntu-32: ==> default: Importing base box 'hashicorp/precise32'...
+I, [2021-09-15T10:30:03.184555 #6812]  INFO -- default-ubuntu-32: [KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+I, [2021-09-15T10:30:03.497072 #6812]  INFO -- default-ubuntu-32: ==> default: Checking if box 'hashicorp/precise32' version '1.0.0' is up to date...
+I, [2021-09-15T10:30:05.527883 #6812]  INFO -- default-ubuntu-32: ==> default: Setting the name of the VM: kitchen-test-default-ubuntu-32-49027fcd-2faa-4405-87e5-0f12274cf4f7
+I, [2021-09-15T10:30:06.653279 #6812]  INFO -- default-ubuntu-32: ==> default: Clearing any previously set network interfaces...
+I, [2021-09-15T10:30:06.793642 #6812]  INFO -- default-ubuntu-32: ==> default: Preparing network interfaces based on configuration...
+I, [2021-09-15T10:30:06.794002 #6812]  INFO -- default-ubuntu-32:     default: Adapter 1: nat
+I, [2021-09-15T10:30:06.918864 #6812]  INFO -- default-ubuntu-32: ==> default: Forwarding ports...
+I, [2021-09-15T10:30:07.059236 #6812]  INFO -- default-ubuntu-32:     default: 22 (guest) => 2222 (host) (adapter 1)
+I, [2021-09-15T10:30:07.673923 #6812]  INFO -- default-ubuntu-32: ==> default: Running 'pre-boot' VM customizations...
+I, [2021-09-15T10:30:07.814632 #6812]  INFO -- default-ubuntu-32: ==> default: Booting VM...
+I, [2021-09-15T10:30:21.331302 #6812]  INFO -- default-ubuntu-32: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+I, [2021-09-15T10:30:21.331944 #6812]  INFO -- default-ubuntu-32: for controlling VirtualBox. The command and stderr is shown below.
+I, [2021-09-15T10:30:21.332156 #6812]  INFO -- default-ubuntu-32: 
+I, [2021-09-15T10:30:21.332516 #6812]  INFO -- default-ubuntu-32: Command: ["startvm", "ca431637-9977-4cfc-bd1b-c6a0be77cf6c", "--type", "headless"]
+I, [2021-09-15T10:30:21.332724 #6812]  INFO -- default-ubuntu-32: 
+I, [2021-09-15T10:30:21.332878 #6812]  INFO -- default-ubuntu-32: Stderr: VBoxManage.exe: error: Failed to load API DLL: WinHvPlatform.dll: VERR_MODULE_NOT_FOUND; vid.dll: VERR_MODULE_NOT_FOUND (VERR_NEM_INIT_FAILED).
+I, [2021-09-15T10:30:21.333056 #6812]  INFO -- default-ubuntu-32: VBoxManage.exe: error: VT-x is not available (VERR_VMX_NO_VMX)
+I, [2021-09-15T10:30:21.333257 #6812]  INFO -- default-ubuntu-32: VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
+E, [2021-09-15T10:30:21.349938 #6812] ERROR -- default-ubuntu-32: Create failed on instance <default-ubuntu-32>.
+E, [2021-09-15T10:30:21.350210 #6812] ERROR -- default-ubuntu-32: ------Exception-------
+E, [2021-09-15T10:30:21.350315 #6812] ERROR -- default-ubuntu-32: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2021-09-15T10:30:21.350408 #6812] ERROR -- default-ubuntu-32: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'hashicorp/precise32'...
+[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'hashicorp/precise32' version '1.0.0' is up to date...
+==> default: Setting the name of the VM: kitchen-test-default-ubuntu-32-49027fcd-2faa-4405-87e5-0f12274cf4f7
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+STDERR: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["startvm", "ca431637-9977-4cfc-bd1b-c6a0be77cf6c", "--type", "headless"]
+
+Stderr: VBoxManage.exe: error: Failed to load API DLL: WinHvPlatform.dll: VERR_MODULE_NOT_FOUND; vid.dll: VERR_MODULE_NOT_FOUND (VERR_NEM_INIT_FAILED).
+VBoxManage.exe: error: VT-x is not available (VERR_VMX_NO_VMX)
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2021-09-15T10:30:21.350585 #6812] ERROR -- default-ubuntu-32: ----------------------
+E, [2021-09-15T10:30:21.350685 #6812] ERROR -- default-ubuntu-32: ------Backtrace-------
+E, [2021-09-15T10:30:21.350774 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2021-09-15T10:30:21.350863 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:57:in `run_command'
+E, [2021-09-15T10:30:21.350951 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:481:in `run_command'
+E, [2021-09-15T10:30:21.351038 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:428:in `run'
+E, [2021-09-15T10:30:21.351126 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:532:in `run_vagrant_up'
+E, [2021-09-15T10:30:21.351213 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:117:in `create'
+E, [2021-09-15T10:30:21.351300 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2021-09-15T10:30:21.351387 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2021-09-15T10:30:21.351475 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:560:in `block in synchronize_or_call'
+E, [2021-09-15T10:30:21.351568 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize'
+E, [2021-09-15T10:30:21.351680 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize_or_call'
+E, [2021-09-15T10:30:21.351768 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2021-09-15T10:30:21.351861 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2021-09-15T10:30:21.351954 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:523:in `action'
+E, [2021-09-15T10:30:21.352041 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2021-09-15T10:30:21.352128 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2021-09-15T10:30:21.352214 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2021-09-15T10:30:21.352301 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2021-09-15T10:30:21.352391 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2021-09-15T10:30:21.352482 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `each'
+E, [2021-09-15T10:30:21.352568 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2021-09-15T10:30:21.352655 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:128:in `create'
+E, [2021-09-15T10:30:21.352741 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2021-09-15T10:30:21.352828 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2021-09-15T10:30:21.352915 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2021-09-15T10:30:21.353002 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.0/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2021-09-15T10:30:21.353088 #6812] ERROR -- default-ubuntu-32: ----End Backtrace-----
+E, [2021-09-15T10:30:21.353172 #6812] ERROR -- default-ubuntu-32: ---Nested Exception---
+E, [2021-09-15T10:30:21.353256 #6812] ERROR -- default-ubuntu-32: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2021-09-15T10:30:21.353341 #6812] ERROR -- default-ubuntu-32: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'hashicorp/precise32'...
+[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'hashicorp/precise32' version '1.0.0' is up to date...
+==> default: Setting the name of the VM: kitchen-test-default-ubuntu-32-49027fcd-2faa-4405-87e5-0f12274cf4f7
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+STDERR: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["startvm", "ca431637-9977-4cfc-bd1b-c6a0be77cf6c", "--type", "headless"]
+
+Stderr: VBoxManage.exe: error: Failed to load API DLL: WinHvPlatform.dll: VERR_MODULE_NOT_FOUND; vid.dll: VERR_MODULE_NOT_FOUND (VERR_NEM_INIT_FAILED).
+VBoxManage.exe: error: VT-x is not available (VERR_VMX_NO_VMX)
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2021-09-15T10:30:21.353430 #6812] ERROR -- default-ubuntu-32: ----------------------
+E, [2021-09-15T10:30:21.353516 #6812] ERROR -- default-ubuntu-32: ------Backtrace-------
+E, [2021-09-15T10:30:21.353606 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2021-09-15T10:30:21.353692 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:57:in `run_command'
+E, [2021-09-15T10:30:21.353783 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:481:in `run_command'
+E, [2021-09-15T10:30:21.353874 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:428:in `run'
+E, [2021-09-15T10:30:21.354078 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:532:in `run_vagrant_up'
+E, [2021-09-15T10:30:21.356805 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:117:in `create'
+E, [2021-09-15T10:30:21.356925 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2021-09-15T10:30:21.357025 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2021-09-15T10:30:21.357120 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:560:in `block in synchronize_or_call'
+E, [2021-09-15T10:30:21.357214 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize'
+E, [2021-09-15T10:30:21.357305 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize_or_call'
+E, [2021-09-15T10:30:21.371402 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2021-09-15T10:30:21.372350 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2021-09-15T10:30:21.372465 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:523:in `action'
+E, [2021-09-15T10:30:21.372580 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2021-09-15T10:30:21.372674 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2021-09-15T10:30:21.372763 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2021-09-15T10:30:21.372851 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2021-09-15T10:30:21.372940 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2021-09-15T10:30:21.373025 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `each'
+E, [2021-09-15T10:30:21.373112 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2021-09-15T10:30:21.373199 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:128:in `create'
+E, [2021-09-15T10:30:21.373286 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2021-09-15T10:30:21.373460 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2021-09-15T10:30:21.373566 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2021-09-15T10:30:21.373657 #6812] ERROR -- default-ubuntu-32: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.0/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2021-09-15T10:30:21.373746 #6812] ERROR -- default-ubuntu-32: ----End Backtrace-----

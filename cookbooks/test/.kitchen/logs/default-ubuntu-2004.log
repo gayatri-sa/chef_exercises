@@ -1,0 +1,129 @@
+I, [2021-09-15T06:03:16.876451 #6748]  INFO -- default-ubuntu-2004: -----> Creating <default-ubuntu-2004>...
+I, [2021-09-15T06:03:28.610628 #6748]  INFO -- default-ubuntu-2004: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2021-09-15T06:03:31.744981 #6748]  INFO -- default-ubuntu-2004: ==> default: Checking if box 'bento/ubuntu-20.04' version '202107.28.0' is up to date...
+I, [2021-09-15T06:03:33.247311 #6748]  INFO -- default-ubuntu-2004: ==> default: Setting the name of the VM: kitchen-test-default-ubuntu-2004-02e21faf-6d24-49bd-a10e-44a3b7f13c7e
+I, [2021-09-15T06:03:33.644841 #6748]  INFO -- default-ubuntu-2004: ==> default: Clearing any previously set forwarded ports...
+I, [2021-09-15T06:03:34.941306 #6748]  INFO -- default-ubuntu-2004: ==> default: Clearing any previously set network interfaces...
+I, [2021-09-15T06:03:35.081796 #6748]  INFO -- default-ubuntu-2004: ==> default: Preparing network interfaces based on configuration...
+I, [2021-09-15T06:03:35.082131 #6748]  INFO -- default-ubuntu-2004:     default: Adapter 1: nat
+I, [2021-09-15T06:03:35.223273 #6748]  INFO -- default-ubuntu-2004: ==> default: Forwarding ports...
+I, [2021-09-15T06:03:35.363312 #6748]  INFO -- default-ubuntu-2004:     default: 22 (guest) => 2222 (host) (adapter 1)
+I, [2021-09-15T06:03:36.061342 #6748]  INFO -- default-ubuntu-2004: ==> default: Running 'pre-boot' VM customizations...
+I, [2021-09-15T06:03:36.186438 #6748]  INFO -- default-ubuntu-2004: ==> default: Booting VM...
+I, [2021-09-15T06:03:51.981509 #6748]  INFO -- default-ubuntu-2004: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+I, [2021-09-15T06:03:51.981727 #6748]  INFO -- default-ubuntu-2004: for controlling VirtualBox. The command and stderr is shown below.
+I, [2021-09-15T06:03:51.981874 #6748]  INFO -- default-ubuntu-2004: 
+I, [2021-09-15T06:03:51.982018 #6748]  INFO -- default-ubuntu-2004: Command: ["startvm", "5daa085a-8348-4500-94f0-af05b48f6ec5", "--type", "headless"]
+I, [2021-09-15T06:03:51.982282 #6748]  INFO -- default-ubuntu-2004: 
+I, [2021-09-15T06:03:51.982461 #6748]  INFO -- default-ubuntu-2004: Stderr: VBoxManage.exe: error: Failed to load API DLL: WinHvPlatform.dll: VERR_MODULE_NOT_FOUND; vid.dll: VERR_MODULE_NOT_FOUND (VERR_NEM_INIT_FAILED).
+I, [2021-09-15T06:03:51.982589 #6748]  INFO -- default-ubuntu-2004: VBoxManage.exe: error: VT-x is not available (VERR_VMX_NO_VMX)
+I, [2021-09-15T06:03:51.982696 #6748]  INFO -- default-ubuntu-2004: VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
+E, [2021-09-15T06:03:52.007160 #6748] ERROR -- default-ubuntu-2004: Create failed on instance <default-ubuntu-2004>.
+E, [2021-09-15T06:03:52.008852 #6748] ERROR -- default-ubuntu-2004: ------Exception-------
+E, [2021-09-15T06:03:52.009044 #6748] ERROR -- default-ubuntu-2004: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2021-09-15T06:03:52.009138 #6748] ERROR -- default-ubuntu-2004: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/ubuntu-20.04' version '202107.28.0' is up to date...
+==> default: Setting the name of the VM: kitchen-test-default-ubuntu-2004-02e21faf-6d24-49bd-a10e-44a3b7f13c7e
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+STDERR: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["startvm", "5daa085a-8348-4500-94f0-af05b48f6ec5", "--type", "headless"]
+
+Stderr: VBoxManage.exe: error: Failed to load API DLL: WinHvPlatform.dll: VERR_MODULE_NOT_FOUND; vid.dll: VERR_MODULE_NOT_FOUND (VERR_NEM_INIT_FAILED).
+VBoxManage.exe: error: VT-x is not available (VERR_VMX_NO_VMX)
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2021-09-15T06:03:52.009396 #6748] ERROR -- default-ubuntu-2004: ----------------------
+E, [2021-09-15T06:03:52.009501 #6748] ERROR -- default-ubuntu-2004: ------Backtrace-------
+E, [2021-09-15T06:03:52.009598 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2021-09-15T06:03:52.009708 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:57:in `run_command'
+E, [2021-09-15T06:03:52.009814 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:481:in `run_command'
+E, [2021-09-15T06:03:52.009916 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:428:in `run'
+E, [2021-09-15T06:03:52.010009 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:532:in `run_vagrant_up'
+E, [2021-09-15T06:03:52.010101 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:117:in `create'
+E, [2021-09-15T06:03:52.010192 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2021-09-15T06:03:52.010327 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2021-09-15T06:03:52.010454 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:560:in `block in synchronize_or_call'
+E, [2021-09-15T06:03:52.010542 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize'
+E, [2021-09-15T06:03:52.010629 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize_or_call'
+E, [2021-09-15T06:03:52.010731 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2021-09-15T06:03:52.017759 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2021-09-15T06:03:52.017883 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:523:in `action'
+E, [2021-09-15T06:03:52.017982 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2021-09-15T06:03:52.018076 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2021-09-15T06:03:52.018188 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2021-09-15T06:03:52.018313 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2021-09-15T06:03:52.018423 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2021-09-15T06:03:52.018516 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `each'
+E, [2021-09-15T06:03:52.018604 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2021-09-15T06:03:52.018731 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:128:in `create'
+E, [2021-09-15T06:03:52.018818 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2021-09-15T06:03:52.018904 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2021-09-15T06:03:52.018991 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2021-09-15T06:03:52.019174 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.0/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2021-09-15T06:03:52.019329 #6748] ERROR -- default-ubuntu-2004: ----End Backtrace-----
+E, [2021-09-15T06:03:52.019422 #6748] ERROR -- default-ubuntu-2004: ---Nested Exception---
+E, [2021-09-15T06:03:52.019533 #6748] ERROR -- default-ubuntu-2004: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2021-09-15T06:03:52.019626 #6748] ERROR -- default-ubuntu-2004: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/ubuntu-20.04' version '202107.28.0' is up to date...
+==> default: Setting the name of the VM: kitchen-test-default-ubuntu-2004-02e21faf-6d24-49bd-a10e-44a3b7f13c7e
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+STDERR: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["startvm", "5daa085a-8348-4500-94f0-af05b48f6ec5", "--type", "headless"]
+
+Stderr: VBoxManage.exe: error: Failed to load API DLL: WinHvPlatform.dll: VERR_MODULE_NOT_FOUND; vid.dll: VERR_MODULE_NOT_FOUND (VERR_NEM_INIT_FAILED).
+VBoxManage.exe: error: VT-x is not available (VERR_VMX_NO_VMX)
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2021-09-15T06:03:52.019800 #6748] ERROR -- default-ubuntu-2004: ----------------------
+E, [2021-09-15T06:03:52.019902 #6748] ERROR -- default-ubuntu-2004: ------Backtrace-------
+E, [2021-09-15T06:03:52.019994 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2021-09-15T06:03:52.020121 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/shell_out.rb:57:in `run_command'
+E, [2021-09-15T06:03:52.020208 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:481:in `run_command'
+E, [2021-09-15T06:03:52.020338 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:428:in `run'
+E, [2021-09-15T06:03:52.020534 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:532:in `run_vagrant_up'
+E, [2021-09-15T06:03:52.020683 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/kitchen-vagrant-1.10.0/lib/kitchen/driver/vagrant.rb:117:in `create'
+E, [2021-09-15T06:03:52.020808 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2021-09-15T06:03:52.020897 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2021-09-15T06:03:52.020986 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:560:in `block in synchronize_or_call'
+E, [2021-09-15T06:03:52.021111 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize'
+E, [2021-09-15T06:03:52.021201 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:558:in `synchronize_or_call'
+E, [2021-09-15T06:03:52.021371 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2021-09-15T06:03:52.021520 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2021-09-15T06:03:52.021616 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:523:in `action'
+E, [2021-09-15T06:03:52.021704 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2021-09-15T06:03:52.021812 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2021-09-15T06:03:52.021902 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2021-09-15T06:03:52.021991 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2021-09-15T06:03:52.022117 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2021-09-15T06:03:52.022206 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `each'
+E, [2021-09-15T06:03:52.022332 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2021-09-15T06:03:52.022425 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/instance.rb:128:in `create'
+E, [2021-09-15T06:03:52.022516 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2021-09-15T06:03:52.022664 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2021-09-15T06:03:52.022838 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.0.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2021-09-15T06:03:52.022946 #6748] ERROR -- default-ubuntu-2004: C:/opscode/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.0/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2021-09-15T06:03:52.023040 #6748] ERROR -- default-ubuntu-2004: ----End Backtrace-----

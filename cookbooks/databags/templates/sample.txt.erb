@@ -1,0 +1,4 @@
+<% company_info = Chef::DataBagItem.load('common', 'company_info') %>
+
+Company Name: <%= company_info['name'] %>
+Company Message: <%= company_info['message'] %>
